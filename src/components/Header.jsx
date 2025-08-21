@@ -11,11 +11,13 @@ function Header() {
         {/* Main flex row */}
         <div className="flex items-center justify-between">
           {/* Left: Logo + Streak */}
-          <div className="flex items-center gap-10">
+          <div className="flex items-center justify-between w-full mr-2">
+            {/* Logo */}
             <div className="text-3xl font-bold text-white">
               <span>Ulearn</span>
             </div>
-            {/* StreakCounter always on same line as logo */}
+
+            {/* StreakCounter always in same line */}
             <StreakCounter />
           </div>
 

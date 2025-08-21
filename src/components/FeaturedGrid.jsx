@@ -27,13 +27,14 @@ function FeaturedGrid() {
       route: "/analyzer",
     },
   ];
+
   return (
     <div className="grid grid-cols-2 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
       {features.map((feature, index) => (
         <FeaturedCard
           key={index}
           title={feature.title}
-          subittle={feature.subtitle}
+          subtitle={feature.subtitle}
           onClick={() => navigate(feature.route)}
         />
       ))}

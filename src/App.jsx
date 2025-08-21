@@ -4,6 +4,7 @@ import LandingPage from './components/LandingPage'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import Dashboard from './components/Dashboard'
+import UploadSlides from './pages/UploadSlides'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/upload' element={<UploadSlides/>}/>
     </Routes>
    
   )
