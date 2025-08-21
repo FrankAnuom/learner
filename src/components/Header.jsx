@@ -1,57 +1,55 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import StreakCounter from "./StreakCounter";
 
 function Header() {
   const [isMenuOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: "Home" },
-    { name: "Login" },
-    { name: "Create Account" },
-  ];
-
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 transition-all duration-500">
+    <header className="fixed top-0 right-0 left-0 z-50 transition-all duration-500 bg-blue-900">
       <div className="container mx-auto px-6 py-4">
+        {/* Main flex row */}
         <div className="flex items-center justify-between">
-          <div className="text-3xl mt-2 font-bold">
-            <span className="  rounded text-white p-0.5">Ulearn</span>
+          {/* Left: Logo + Streak */}
+          <div className="flex items-center gap-10">
+            <div className="text-3xl font-bold text-white">
+              <span>Ulearn</span>
+            </div>
+            {/* StreakCounter always on same line as logo */}
+            <StreakCounter />
           </div>
-          {/* desktop menu */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => {
-              return (
-                <button
-                  key={index}
-                  className="text-white hover:text-blue-200 hover:rounded transition-all duration-300 font-medium relative group"
-                >
-                  {item.name}
-                </button>
-              );
-            })}
-          </nav>
 
-          {/* mobile menu */}
+          {/* Right: Desktop nav */}
+          <div className="hidden md:flex items-center space-x-8">
+            {/* Profile Avatar */}
+            <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-blue-900">
+              U
+            </div>
+
+            {/* Logout Button */}
+            <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium transition">
+              Logout
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <button
-            className="text-white md:hidden"
+            className="text-white md:hidden flex items-center gap-2"
             onClick={() => setIsOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
+        {/* Mobile nav dropdown */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-slate-800 pt-4 bg-blue-800 rounded-lg shadow-lg ">
-            {navItems.map((item, index) => {
-              return (
-                <button
-                  key={index}
-                  className="block w-full text-center py-3 px-4 text-white font-bold  hover:bg-slate-blue-800"
-                >
-                  {item.name}
-                </button>
-              );
-            })}
+          <nav className="md:hidden mt-4 pb-4 border-t border-slate-800 pt-4 bg-blue-800 rounded-lg shadow-lg space-y-4">
+            <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-blue-900 mx-auto">
+              U
+            </div>
+            <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium w-full">
+              Logout
+            </button>
           </nav>
         )}
       </div>

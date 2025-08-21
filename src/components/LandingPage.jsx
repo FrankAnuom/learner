@@ -23,12 +23,12 @@ function LandingPage() {
       {/* Buttons */}
       <div className="flex flex-col w-full max-w-xs space-y-3">
         <Link to="/signup">
-          <button className="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-purple-600 transition">
+          <button className="w-full bg-green-500 cursor-pointer text-white py-3 rounded-lg font-semibold hover:bg-green-800 transition">
             Sign up
           </button>
         </Link>
         <Link to="/login">
-          <button className="w-full border border-gray-300 text-gray-600 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
+          <button className="w-full cursor-pointer border border-gray-300 text-gray-600 py-3 rounded-lg font-medium hover:bg-gray-100 transition">
             Already have an account
           </button>
         </Link>
